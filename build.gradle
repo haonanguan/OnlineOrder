@@ -21,6 +21,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+//    implementation 'com.github.javafaker:javafaker:1.0.2'
+//    implementation 'org.yaml:snakeyaml:2.2'
+//    implementation 'org.yaml:snakeyaml:1.33'
 }
 
 tasks.named('test') {
