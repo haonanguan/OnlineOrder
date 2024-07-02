@@ -1,7 +1,6 @@
 package com.laioffer.onlineorder.hello;
 
-
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +11,6 @@ import java.util.Locale;
 public class HelloController {
     @GetMapping("/hello")
     public Person sayHello(@RequestParam(required = false, defaultValue = "en-US") String locale){
-//        return "Hello, world!";
         Faker faker = new Faker(new Locale(locale));
         String name = faker.name().fullName();
         String company = faker.company().name();
@@ -22,11 +20,6 @@ public class HelloController {
         String bookTitle = faker.book().title();
         String bookAuthor = faker.book().author();
 
-        String template = "This is %s,\n" +
-                "I work at %s,\n" +
-                "I live at %s in %s %s,\n" +
-                "My favorite book is %s by %s.\n";
-//        return template.formatted(name, company, street, city, state, bookTitle, bookAuthor);
         return new Person(name, company, new Address(street, city, state, null), new Book(bookTitle, bookAuthor));
     }
 }
