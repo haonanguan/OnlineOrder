@@ -1,8 +1,18 @@
 logging:
   level:
     org.apache.coyote.http11.Http11InputBuffer: DEBUG # Incoming HTTP requests
+#    org.soringframwork.jdbc.core: DEBUG #SQL
 
 spring:
+  sql:
+    init:
+      mode: ${INIT_DB:always}
+      schema-locations: "classpath:databse-init.sql"
+  datasource:
+    url: jdbc:postgresql://${DATABASE_URL:localhost}:5432/onlineorder
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:secret}
+    driver-class-name: org.postgresql.Driver
   jackson:
     default-property-inclusion: non_null
     property-naming-strategy: SNAKE_CASE
