@@ -23,7 +23,7 @@ public class HelloController {
         return new Person(name, company, new Address(street, city, state, null), new Book(bookTitle, bookAuthor));
     }
 //@GetMapping("/hello")
-//public Person sayHello(@RequestParam(required = false) String name) {
+//public Person sayHello(@RequestParam(value = "name", required = false) String name) {
 //    if (name == null) {
 //        name = "Guest";
 //    }
