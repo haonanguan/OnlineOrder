@@ -8,7 +8,7 @@ public record CustomerEntity(
         @Id Long id,
         String email,
         String password,
-        Boolean enabled,
+        boolean enabled,
         String firstName,
         String lastName
 ) {
